@@ -1,0 +1,38 @@
+@use "../../assets/global-styles/variables.scss" as *;
+
+header {
+  border: 3px solid $header-outline;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 85%;
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+
+.logo {
+  max-width: 6rem;
+}
+
+.score-display {
+  background: white;
+  border-radius: 5px;
+  padding: .75rem 1.5rem;
+  text-align: center;
+}
+
+.score-title {
+  color: $score-text;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.score {
+  color: $dark-text;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1;
+}
