@@ -1,5 +1,7 @@
 @use './variables.scss' as *;
 
 body {
+  background: $bg-gradient;
   font-family: $ff-main;
+  min-height: 100vh;
 }
