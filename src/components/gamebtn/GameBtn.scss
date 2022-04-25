@@ -1,0 +1,59 @@
+@use "../../assets/global-styles/variables.scss" as *;
+
+.game-btn-container {
+  display: flex;
+  gap: 4rem;
+  position: relative;
+}
+
+.game-btn {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+      position: absolute;
+      border-radius: 50%;
+      width: 8rem;
+      height: 8rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -2;
+  }
+}
+
+.rock::after {
+  background: $rock;
+}
+
+.paper::after {
+  background: $paper;
+}
+
+.scissors::after {
+  background: $scissors;
+}
+
+.lizard::after {
+  background: $lizard;
+}
+
+.spock::after {
+  background: $spock;
+}

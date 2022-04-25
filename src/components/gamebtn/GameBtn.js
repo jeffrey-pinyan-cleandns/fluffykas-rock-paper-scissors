@@ -1,7 +1,9 @@
-export const GameBtn = ({ btnImage }) => {
+import "./GameBtn.scss";
+
+export const GameBtn = ({ element }) => {
   return (
-    <button>
-      <img src={btnImage} alt="" />
+    <button className={`${element.name} game-btn`} style={element.style}>
+      <img src={element.image} alt={element.name} />
     </button>
   );
 }
