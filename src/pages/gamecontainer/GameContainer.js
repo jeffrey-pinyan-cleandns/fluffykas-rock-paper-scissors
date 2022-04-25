@@ -18,15 +18,15 @@ export const GameContainer = () => {
   const gameElements = (game === "Rock, Paper, Scissors, Lizard, Spock" ?
     [
       { name: "rock", image: rock, style: { bottom: 0, right: 0 } },
-      { name: "paper", image: paper, style: { top: "50%", right: 0 } },
-      { name: "scissors", image: scissors, style: { left: "50%" } },
+      { name: "paper", image: paper, style: { top: "50%", right: 0, transform: "translateY(-50%)" } },
+      { name: "scissors", image: scissors, style: { left: "50%", transform: "translateX(-50%)" } },
       { name: "lizard", image: lizard, style: { bottom: 0 } },
-      { name: "spock", image: spock, style: { top: "50%" } }
+      { name: "spock", image: spock, style: { top: "50%", transform: "translateY(-50%)" } }
     ] :
     [
       { name: "rock", image: rock, style: {} },
       { name: "paper", image: paper, style: { right: 0 } },
-      { name: "scissors", image: scissors, style: { bottom: 0 } }
+      { name: "scissors", image: scissors, style: { bottom: 0, left: "50%", transform: "translateX(-50%)" } }
     ]
   );
 
