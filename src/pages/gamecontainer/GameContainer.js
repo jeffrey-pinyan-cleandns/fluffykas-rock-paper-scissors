@@ -20,16 +20,16 @@ export const GameContainer = () => {
 
   const gameElements = (game === "Rock, Paper, Scissors, Lizard, Spock" ?
     [
-      { name: "rock", image: rock, style: { bottom: 0, right: 0 } },
-      { name: "paper", image: paper, style: { top: "50%", right: 0, transform: "translateY(-50%)" } },
-      { name: "scissors", image: scissors, style: { left: "50%", transform: "translateX(-50%)" } },
-      { name: "lizard", image: lizard, style: { bottom: 0 } },
-      { name: "spock", image: spock, style: { top: "50%", transform: "translateY(-50%)" } }
+      { name: "rock", image: rock, style: { bottom: "-2.5rem", right: 0 } },
+      { name: "paper", image: paper, style: { top: "50%", right: "-2.5rem", transform: "translateY(-50%)" } },
+      { name: "scissors", image: scissors, style: { top: "-2.5rem", left: "50%", transform: "translateX(-50%)" } },
+      { name: "lizard", image: lizard, style: { bottom: "-2.5rem" } },
+      { name: "spock", image: spock, style: { top: "50%", left: "-2.5rem", transform: "translateY(-50%)" } }
     ] :
     [
-      { name: "rock", image: rock, style: {} },
-      { name: "paper", image: paper, style: { right: 0 } },
-      { name: "scissors", image: scissors, style: { bottom: 0, left: "50%", transform: "translateX(-50%)" } }
+      { name: "rock", image: rock, style: { left: "-2.5rem" } },
+      { name: "paper", image: paper, style: { right: "-2.5rem" } },
+      { name: "scissors", image: scissors, style: { bottom: "-2.5rem", left: "50%", transform: "translateX(-50%)" } }
     ]
   );
 
@@ -52,6 +52,11 @@ export const GameContainer = () => {
           setWinner("DRAW");
         } else if (houseChoice === "paper") {
           setWinner("HOUSE WINS");
+        } else if (houseChoice === "lizard") {
+          setWinner("USER WINS");
+          setScore(score + 1);
+        } else if (houseChoice === "spock") {
+          setWinner("HOUSE WINS");
         } else {
           setWinner("USER WINS");
           setScore(score + 1);
@@ -63,6 +68,11 @@ export const GameContainer = () => {
           setScore(score + 1);
         } else if (houseChoice === "paper") {
           setWinner("DRAW");
+        } else if (houseChoice === "lizard") {
+          setWinner("HOUSE WINS");
+        } else if (houseChoice === "spock") {
+          setWinner("USER WINS");
+          setScore(score + 1);
         } else {
           setWinner("HOUSE WINS");
         };
@@ -73,8 +83,43 @@ export const GameContainer = () => {
         } else if (houseChoice === "paper") {
           setWinner("USER WINS");
           setScore(score + 1);
+        } else if (houseChoice === "lizard") {
+          setWinner("USER WINS");
+          setScore(score + 1);
+        } else if (houseChoice === "spock") {
+          setWinner("HOUSE WINS");
         } else {
           setWinner("DRAW");
+        };
+        break;
+      case "lizard":
+        if (houseChoice === "rock") {
+          setWinner("HOUSE WINS");
+        } else if (houseChoice === "paper") {
+          setWinner("USER WINS");
+          setScore(score + 1);
+        } else if (houseChoice === "lizard") {
+          setWinner("DRAW");
+        } else if (houseChoice === "spock") {
+          setWinner("USER WINS");
+          setScore(score + 1);
+        } else {
+          setWinner("HOUSE WINS");
+        };
+        break;
+      case "spock":
+        if (houseChoice === "rock") {
+          setWinner("USER WINS");
+          setScore(score + 1)
+        } else if (houseChoice === "paper") {
+          setWinner("HOUSE WINS");
+        } else if (houseChoice === "lizard") {
+          setWinner("HOUSE WINS");
+        } else if (houseChoice === "spock") {
+          setWinner("DRAW");
+          setScore(score + 1);
+        } else {
+          setWinner("USER WINS");
         };
         break;
       default:
