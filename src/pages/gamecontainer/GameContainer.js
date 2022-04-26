@@ -105,6 +105,9 @@ export const GameContainer = () => {
         })}
       </div>
       {userChoice && <div className="somestuff">{userChoice}, {houseChoice}, {winner}</div>}
+      {userChoice && <div className="results">
+        {/* eeeeh..gameElements.filter... maybe? */}
+      </div>}
       <RulesBtn />
     </div>
   );
