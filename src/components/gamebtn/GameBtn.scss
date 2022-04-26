@@ -18,8 +18,8 @@
     background: white;
     border-top: 8px solid rgb(216, 212, 212);
     border-radius: 50%;
-    width: clamp(6rem,10vw,10rem);
-    height: clamp(6rem,10vw,10rem);
+    width: clamp(6rem,10vw,7rem);
+    height: clamp(6rem,10vw,7rem);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -30,8 +30,8 @@
     content: "";
       position: absolute;
       border-radius: 50%;
-      width: clamp(8rem, 14vw, 14rem);
-      height: clamp(8rem, 14vw, 14rem);
+      width: clamp(8rem, 8vw, 11rem);
+      height: clamp(8rem, 8vw, 11rem);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
