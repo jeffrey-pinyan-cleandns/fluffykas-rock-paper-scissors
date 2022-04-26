@@ -16,9 +16,10 @@
     content: "";
     position: absolute;
     background: white;
+    border-top: 8px solid rgb(216, 212, 212);
     border-radius: 50%;
-    width: 6rem;
-    height: 6rem;
+    width: clamp(6rem,10vw,10rem);
+    height: clamp(6rem,10vw,10rem);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -29,8 +30,8 @@
     content: "";
       position: absolute;
       border-radius: 50%;
-      width: 8rem;
-      height: 8rem;
+      width: clamp(8rem, 14vw, 14rem);
+      height: clamp(8rem, 14vw, 14rem);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -40,20 +41,25 @@
 
 .rock::after {
   background: $rock;
+  border-bottom: 8px solid hsl(349, 71%, 45%);
 }
 
 .paper::after {
   background: $paper;
+  border-bottom: 8px solid hsl(230, 89%, 59%);
 }
 
 .scissors::after {
   background: $scissors;
+  border-bottom: 8px solid hsl(39, 89%, 46%);
 }
 
 .lizard::after {
   background: $lizard;
+  border-bottom: 8px solid hsl(261, 73%, 57%);
 }
 
 .spock::after {
   background: $spock;
+  border-bottom: 8px solid hsl(189, 59%, 50%);
 }
