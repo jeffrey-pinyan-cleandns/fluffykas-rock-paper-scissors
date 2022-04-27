@@ -3,13 +3,12 @@ import { useState, useEffect, useContext, createContext } from "react";
 const GameContext = createContext();
 
 export function GameProvider({ children }) {
-  const [game, setGame] = useState("");
-  let [score, setScore] = useState(0);
 
-  //Setting game rules, getting userChoice, a random houseChoice and compare the two for the winner
+  const [game, setGame] = useState("");
   const [userChoice, setUserChoice] = useState("");
   const [houseChoice, setHouseChoice] = useState("");
-  const [winner, setWinner] = useState("");
+  const [result, setResult] = useState("");
+  const [score, setScore] = useState(0);
 
   const choices = (game === "Rock, Paper, Scissors, Lizard, Spock" ? ["rock", "paper", "scissors", "lizard", "spock"] : ["rock", "paper", "scissors"]);
 
@@ -18,90 +17,47 @@ export function GameProvider({ children }) {
   }
 
   useEffect(() => {
-    switch (userChoice) {
-      case "rock":
-        if (houseChoice === "rock") {
-          setWinner("DRAW");
-        } else if (houseChoice === "paper") {
-          setWinner("HOUSE WINS");
-        } else if (houseChoice === "lizard") {
-          setWinner("USER WINS");
-          setScore(score + 1);
-        } else if (houseChoice === "spock") {
-          setWinner("HOUSE WINS");
-        } else {
-          setWinner("USER WINS");
-          setScore(score + 1);
-        };
+    switch (userChoice + houseChoice) {
+      case "rockrock":
+      case "paperpaper":
+      case "scissorsscissors":
+      case "lizardlizard":
+      case "spockpock":
+        setResult("DRAW");
         break;
-      case "paper":
-        if (houseChoice === "rock") {
-          setWinner("USER WINS");
-          setScore(score + 1);
-        } else if (houseChoice === "paper") {
-          setWinner("DRAW");
-        } else if (houseChoice === "lizard") {
-          setWinner("HOUSE WINS");
-        } else if (houseChoice === "spock") {
-          setWinner("USER WINS");
-          setScore(score + 1);
-        } else {
-          setWinner("HOUSE WINS");
-        };
+      case "rockpaper":
+      case "rockspock":
+      case "paperscissors":
+      case "paperlizard":
+      case "scissorsrock":
+      case "scissorspock":
+      case "lizardrock":
+      case "lizardscissors":
+      case "spocklizard":
+      case "spockpaper":
+        setResult("HOUSE WINS");
         break;
-      case "scissors":
-        if (houseChoice === "rock") {
-          setWinner("HOUSE WINS");
-        } else if (houseChoice === "paper") {
-          setWinner("USER WINS");
-          setScore(score + 1);
-        } else if (houseChoice === "lizard") {
-          setWinner("USER WINS");
-          setScore(score + 1);
-        } else if (houseChoice === "spock") {
-          setWinner("HOUSE WINS");
-        } else {
-          setWinner("DRAW");
-        };
-        break;
-      case "lizard":
-        if (houseChoice === "rock") {
-          setWinner("HOUSE WINS");
-        } else if (houseChoice === "paper") {
-          setWinner("USER WINS");
-          setScore(score + 1);
-        } else if (houseChoice === "lizard") {
-          setWinner("DRAW");
-        } else if (houseChoice === "spock") {
-          setWinner("USER WINS");
-          setScore(score + 1);
-        } else {
-          setWinner("HOUSE WINS");
-        };
-        break;
-      case "spock":
-        if (houseChoice === "rock") {
-          setWinner("USER WINS");
-          setScore(score + 1)
-        } else if (houseChoice === "paper") {
-          setWinner("HOUSE WINS");
-        } else if (houseChoice === "lizard") {
-          setWinner("HOUSE WINS");
-        } else if (houseChoice === "spock") {
-          setWinner("DRAW");
-          setScore(score + 1);
-        } else {
-          setWinner("USER WINS");
-        };
+      case "rockscissors":
+      case "rocklizard":
+      case "paperrock":
+      case "paperspock":
+      case "scissorspaper":
+      case "scissorslizard":
+      case "lizardspock":
+      case "lizardpaper":
+      case "spockscissors":
+      case "spockrock":
+        setResult("USER WINS");
+        setScore(score + 1);
         break;
       default:
-        setWinner("default stuff or error, duh")
+        console.log("default stuff or error, duh")
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userChoice, houseChoice])
+  }, [userChoice, houseChoice]);
 
   return (
-    <GameContext.Provider value={{ game, setGame, score, setScore, setUserChoice, userChoice, getHouseChoice, houseChoice, winner }}>
+    <GameContext.Provider value={{ game, setGame, score, setScore, userChoice, setUserChoice, getHouseChoice, houseChoice, result }}>
       {children}
     </GameContext.Provider>
   );
