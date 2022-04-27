@@ -1,0 +1,17 @@
+ [
+    {
+  "name": "rock",
+  "image": "/images/icon-rock.svg",
+  "style" : { "left": "-2.5rem" }
+  },
+  {
+  "name": "paper",
+  "image": "/images/icon-paper.svg",
+  "style" : { "right": "-2.5rem" }
+  },
+  {
+  "name": "scissors",
+  "image": "/images/icon-scissors.svg",
+  "style" : {"bottom": "-2.5rem", "left": "50%", "transform": "translateX(-50%)"}
+}
+  ]

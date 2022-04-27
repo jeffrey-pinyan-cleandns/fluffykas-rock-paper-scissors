@@ -1,0 +1,27 @@
+[
+  {
+    "name": "rock",
+    "image": "/images/icon-rock.svg",
+    "style" : { "bottom": "-2.5rem", "right": "2rem" }
+  },
+  {
+    "name": "paper",
+    "image": "/images/icon-paper.svg",
+    "style" : { "right": "-2rem", "top": "6rem" }
+  },
+  {
+    "name": "scissors",
+    "image": "/images/icon-scissors.svg",
+    "style" : { "left": "50%", "transform": "translate(-50%", "top": "-1.5rem" }
+  },
+  {
+    "name": "lizard",
+    "image": "/images/icon-lizard.svg",
+    "style" : { "bottom": "-2.5rem", "left": "2rem" }
+  },
+  {
+    "name": "spock",
+    "image": "/images/icon-spock.svg",
+    "style" : { "left": "-2rem", "top": "6rem"}
+  }
+]
