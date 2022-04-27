@@ -1,6 +1,9 @@
 import "./GameBtn.scss";
+import { useGame } from "../../context";
 
-export const GameBtn = ({ element, setUserChoice, getHouseChoice }) => {
+export const GameBtn = ({ element }) => {
+
+  const { setUserChoice, getHouseChoice } = useGame();
 
   const triggerUserChoice = () => {
     setUserChoice(element.name);
