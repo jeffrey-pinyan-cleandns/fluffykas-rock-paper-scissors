@@ -3,6 +3,8 @@ import bgPentagon from "../../assets/images/bg-pentagon.svg";
 import bgTriangle from "../../assets/images/bg-triangle.svg";
 import { Header, GameBtn, RulesBtn, ResultContainer } from "../../components";
 import { useGame } from "../../context";
+import { pageTransition } from "../../assets/animations";
+import { motion } from "framer-motion";
 import dataForGame from "../../data/gameData.json";
 import dataForBonusGame from "../../data/gameDataBonus.json";
 
@@ -12,11 +14,14 @@ export const GameContainer = () => {
   const gameElements = (game === "Rock, Paper, Scissors, Lizard, Spock" ? dataForBonusGame : dataForGame)
 
   return (
-    <div className="game-container">
-
+    <motion.div
+      className="game-container"
+      variants={pageTransition}
+      initial="hidden"
+      animate="visible"
+    >
       <Header />
-
-      {!userChoice &&
+      {!userChoice ?
         <div className="game-btn-container">
           <img src={(game === "Rock, Paper, Scissors, Lizard, Spock" ? bgPentagon : bgTriangle)} alt="" aria-hidden="true" />
           {gameElements.map((element, index) => {
@@ -24,13 +29,10 @@ export const GameContainer = () => {
               <GameBtn key={index} element={element} />
             )
           })}
-        </div>
+        </div> :
+        <ResultContainer />
       }
-
-      {userChoice && <ResultContainer />}
-
       <RulesBtn />
-
-    </div>
+    </motion.div>
   );
 }
