@@ -3,6 +3,7 @@ import "./assets/global-styles/reset.scss";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AppRoutes } from "./pages";
 import { GameProvider } from "./context";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
 
@@ -11,16 +12,18 @@ function App() {
   return (
     <div className="App">
       <GameProvider>
-        <main>
-          <Routes location={location} key={location.pathname}>
-            {AppRoutes.map((route, index) => {
-              const { path, element } = route;
-              return <Route path={path} element={element} key={index} />;
-            })}
-          </Routes>
-        </main>
+        <AnimatePresence>
+          <main>
+            <Routes location={location} key={location.pathname}>
+              {AppRoutes.map((route, index) => {
+                const { path, element } = route;
+                return <Route path={path} element={element} key={index} />;
+              })}
+            </Routes>
+          </main>
+        </AnimatePresence>
       </GameProvider>
-    </div>
+    </div >
   );
 }
 
