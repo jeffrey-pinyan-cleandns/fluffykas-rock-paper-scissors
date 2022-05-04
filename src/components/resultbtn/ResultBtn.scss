@@ -1,0 +1,65 @@
+@use "../../assets/global-styles/variables.scss" as *;
+
+.results {
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+}
+
+.result-btn {
+  all: unset;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: white;
+    border-top: 8px solid rgb(216, 212, 212);
+    border-radius: 50%;
+    width: clamp(6rem,10vw,7rem);
+    height: clamp(6rem,10vw,7rem);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+      position: absolute;
+      border-radius: 50%;
+      width: clamp(8rem, 8vw, 11rem);
+      height: clamp(8rem, 8vw, 11rem);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -2;
+  }
+}
+
+.rock::after {
+  background: $rock;
+  border-bottom: 8px solid hsl(349, 71%, 45%);
+}
+
+.paper::after {
+  background: $paper;
+  border-bottom: 8px solid hsl(230, 89%, 59%);
+}
+
+.scissors::after {
+  background: $scissors;
+  border-bottom: 8px solid hsl(39, 89%, 46%);
+}
+
+.lizard::after {
+  background: $lizard;
+  border-bottom: 8px solid hsl(261, 73%, 57%);
+}
+
+.spock::after {
+  background: $spock;
+  border-bottom: 8px solid hsl(189, 59%, 50%);
+}
