@@ -32,7 +32,9 @@ export const GameContainer = () => {
         </div> :
         <ResultContainer />
       }
-      <RulesBtn />
+      <div className="rules-wrapper">
+        <RulesBtn />
+      </div>
     </motion.div>
   );
 }

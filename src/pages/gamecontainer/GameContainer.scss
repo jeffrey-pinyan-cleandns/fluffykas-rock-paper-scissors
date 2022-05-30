@@ -1,16 +1,24 @@
 .game-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
 }
 
 .game-btn-container {
   position: relative;
+  align-self: center;
 }
 
-.somestuff {
-  color: white;
-  font-size: 2rem;
-  padding-top: 6rem;
+.rules-wrapper {
+  width: 85%;
+  max-width: 50rem;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  @media(min-width: 60rem) {
+    justify-content: flex-end;
+  }
+  @media(min-width: 90rem) {
+    max-width: 100%;
+  }
 }
