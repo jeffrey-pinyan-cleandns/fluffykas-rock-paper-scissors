@@ -4,6 +4,7 @@ import rulesBonus from "../../assets/images/image-rules-bonus.svg";
 import closeBtn from "../../assets/images/icon-close.svg";
 import { useGame } from "../../context";
 import { useState } from "react";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 export const RulesBtn = () => {
 
@@ -11,17 +12,21 @@ export const RulesBtn = () => {
   const [rulesOpened, setRulesOpened] = useState(false);
 
   const openRulesModal = () => {
-    setRulesOpened(true);
+    setRulesOpened(!rulesOpened);
   }
 
   const closeRulesModal = () => {
     setRulesOpened(false);
   }
 
+  let domNode = useClickOutside(() => {
+    setRulesOpened(false);
+  })
+
   return (
     <>
       <button className="rules-btn" onClick={openRulesModal}>RULES</button>
-      <div className={`rules-modal ${rulesOpened ? "active" : ""}`}>
+      <div className={`rules-modal ${rulesOpened ? "active" : ""}`} ref={domNode}>
         <h2 className="modal-title">Rules</h2>
         <img
           src={
