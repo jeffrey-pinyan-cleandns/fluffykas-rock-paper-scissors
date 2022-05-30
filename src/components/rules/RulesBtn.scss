@@ -9,6 +9,13 @@
   letter-spacing: 3px;
   margin-top: 12rem;
   padding: .5rem 2.25rem;
+  transform: scale(1);
+  transition: all .2s ease-in;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 2px 20px 10px hsla(0, 0%, 100%, .15);
+  }
 }
 
 .rules-modal {
