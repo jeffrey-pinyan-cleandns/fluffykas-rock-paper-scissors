@@ -1,5 +1,7 @@
 import "./GameBtn.scss";
 import { useGame } from "../../context";
+import { BtnAnimation } from "../../assets/animations";
+import { motion } from "framer-motion";
 
 export const GameBtn = ({ element }) => {
 
@@ -12,8 +14,12 @@ export const GameBtn = ({ element }) => {
 
 
   return (
-    <button className={`${element.name} game-btn`} style={element.style} onClick={triggerUserChoice}>
+    <motion.button className={`${element.name} game-btn`} style={element.style} onClick={triggerUserChoice}
+      variants={BtnAnimation}
+      initial="hidden"
+      animate="visible"
+    >
       <img src={element.image} alt={element.name} />
-    </button>
+    </motion.button>
   );
 }
