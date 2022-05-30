@@ -27,7 +27,14 @@ export const RulesBtn = () => {
     <>
       <button className="rules-btn" onClick={openRulesModal}>RULES</button>
       <div className={`rules-modal ${rulesOpened ? "active" : ""}`} ref={domNode}>
-        <h2 className="modal-title">Rules</h2>
+        <div className="modal-top">
+          <h2 className="modal-title">Rules</h2>
+          <img
+            src={closeBtn}
+            alt="Close rules."
+            className="close-btn"
+            onClick={closeRulesModal} />
+        </div>
         <img
           src={
             game === "Rock, Paper, Scissors, Lizard, Spock" ?
@@ -40,11 +47,6 @@ export const RulesBtn = () => {
           }
           className="rules-img"
         />
-        <img
-          src={closeBtn}
-          alt="Close rules."
-          className="close-btn"
-          onClick={closeRulesModal} />
       </div>
     </>
   );
