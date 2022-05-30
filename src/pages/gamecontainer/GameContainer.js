@@ -23,7 +23,7 @@ export const GameContainer = () => {
       <Header />
       {!userChoice ?
         <div className="game-btn-container">
-          <img src={(game === "Rock, Paper, Scissors, Lizard, Spock" ? bgPentagon : bgTriangle)} alt="" aria-hidden="true" />
+          <img className="game-bg" src={(game === "Rock, Paper, Scissors, Lizard, Spock" ? bgPentagon : bgTriangle)} alt="" aria-hidden="true" />
           {gameElements.map((element, index) => {
             return (
               <GameBtn key={index} element={element} />

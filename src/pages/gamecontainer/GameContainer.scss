@@ -2,11 +2,20 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .game-btn-container {
   position: relative;
   align-self: center;
+}
+
+.game-bg {
+  max-width: 80%;
+  margin: 0 auto;
+  @media(min-width: 60rem) {
+    max-width: 100%;
+  }
 }
 
 .rules-wrapper {

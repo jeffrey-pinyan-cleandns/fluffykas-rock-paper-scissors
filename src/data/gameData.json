@@ -2,16 +2,16 @@
     {
   "name": "rock",
   "image": "/images/icon-rock.svg",
-  "style" : { "left": "-2.5rem" }
+  "style" : { "left": "2rem" }
   },
   {
   "name": "paper",
   "image": "/images/icon-paper.svg",
-  "style" : { "right": "-2.5rem" }
+  "style" : { "right": "2rem" }
   },
   {
   "name": "scissors",
   "image": "/images/icon-scissors.svg",
-  "style" : {"bottom": "-2.5rem", "left": "50%", "transform": "translateX(-50%)"}
+  "style" : {"bottom": "1rem", "left": "8rem"}
 }
   ]

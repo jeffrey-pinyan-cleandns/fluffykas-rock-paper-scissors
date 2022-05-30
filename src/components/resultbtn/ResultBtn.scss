@@ -41,25 +41,25 @@
 
 .rock::after {
   background: $rock;
-  border-bottom: 8px solid hsl(349, 71%, 45%);
+  border-bottom: 5px solid hsl(349, 71%, 45%);
 }
 
 .paper::after {
   background: $paper;
-  border-bottom: 8px solid hsl(230, 89%, 59%);
+  border-bottom: 5px solid hsl(230, 89%, 59%);
 }
 
 .scissors::after {
   background: $scissors;
-  border-bottom: 8px solid hsl(39, 89%, 46%);
+  border-bottom: 5px solid hsl(39, 89%, 46%);
 }
 
 .lizard::after {
   background: $lizard;
-  border-bottom: 8px solid hsl(261, 73%, 57%);
+  border-bottom: 5px solid hsl(261, 73%, 57%);
 }
 
 .spock::after {
   background: $spock;
-  border-bottom: 8px solid hsl(189, 59%, 50%);
+  border-bottom: 5px solid hsl(189, 59%, 50%);
 }
