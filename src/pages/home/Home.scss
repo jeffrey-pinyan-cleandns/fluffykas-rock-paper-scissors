@@ -44,3 +44,15 @@
     color: $dark-text;
   }
 }
+
+.game-link:focus {
+  outline: 3px dashed white;
+}
+
+.game-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.game-link:focus-visible {
+  outline: 3px dashed white;
+}
