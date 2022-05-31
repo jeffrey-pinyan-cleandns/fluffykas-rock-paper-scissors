@@ -29,7 +29,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshots/rock-paper-scissors-mobile.png)
+![](./screenshots/rock-paper-scissors-desktop.png)
 
 ### Links
 
