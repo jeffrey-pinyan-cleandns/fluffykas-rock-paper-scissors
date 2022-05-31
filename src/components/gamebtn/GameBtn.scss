@@ -72,9 +72,28 @@
   border-bottom: 5px solid hsl(189, 59%, 50%);
 }
 
+.game-btn:hover {
+  animation: click-pulse 1.5s ease infinite;
+}
+
 .game-img {
   max-width: 35px;
   @media(min-width: 50rem) {
     max-width: 100%;
+  }
+}
+
+@keyframes click-pulse {
+  0% {
+      box-shadow: 0 0 80px 40px rgba(0, 0, 0, 0.3);
+  }
+  15% {
+      transform: scale(0.95);
+  }
+  35% {
+      transform: scale(1);
+  }
+  100% {
+      box-shadow: 0 0 80px 40px rgba(0, 0, 0, 0.3);
   }
 }
