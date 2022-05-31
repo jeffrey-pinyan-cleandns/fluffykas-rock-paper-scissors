@@ -1,7 +1,7 @@
 import "./GameContainer.scss";
 import bgPentagon from "../../assets/images/bg-pentagon.svg";
 import bgTriangle from "../../assets/images/bg-triangle.svg";
-import { Header, GameBtn, RulesBtn, ResultContainer } from "../../components";
+import { Header, GameBtn, RulesModal, ResultContainer } from "../../components";
 import { useGame } from "../../context";
 import { pageTransition } from "../../assets/animations";
 import { motion } from "framer-motion";
@@ -33,7 +33,7 @@ export const GameContainer = () => {
         <ResultContainer />
       }
       <div className="rules-wrapper">
-        <RulesBtn />
+        <RulesModal />
       </div>
     </motion.div>
   );
