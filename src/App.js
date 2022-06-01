@@ -14,7 +14,7 @@ function App() {
       <GameProvider>
         <AnimatePresence>
           <main>
-            <Routes location={location} key={location.pathname}>
+            <Routes location={location}>
               {AppRoutes.map((route, index) => {
                 const { path, element } = route;
                 return <Route path={path} element={element} key={index} />;

@@ -32,7 +32,6 @@ export const RulesModal = () => {
         <motion.div
           className={`rules-modal ${rulesOpened ? "active" : ""}`}
           ref={domNode}
-          key={rulesOpened}
           initial={{ y: "-100%", x: "-50%", opacity: 0 }}
           animate={{ y: "-50%", x: "-50%", opacity: 1 }}
           exit={{ y: "-100%", x: "-50%", opacity: 0 }}
