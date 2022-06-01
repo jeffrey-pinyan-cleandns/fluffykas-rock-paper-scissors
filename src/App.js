@@ -15,9 +15,9 @@ function App() {
         <AnimatePresence>
           <main>
             <Routes location={location}>
-              {AppRoutes.map((route, index) => {
+              {AppRoutes.map((route) => {
                 const { path, element } = route;
-                return <Route path={path} element={element} key={index} />;
+                return <Route path={path} element={element} key={path} />;
               })}
             </Routes>
           </main>

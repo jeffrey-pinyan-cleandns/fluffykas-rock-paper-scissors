@@ -24,9 +24,9 @@ export const GameContainer = () => {
       {!userChoice ?
         <div className="game-btn-container">
           <img className="game-bg" src={(game === "Rock, Paper, Scissors, Lizard, Spock" ? bgPentagon : bgTriangle)} alt="" aria-hidden="true" />
-          {gameElements.map((element, index) => {
+          {gameElements.map((element) => {
             return (
-              <GameBtn key={index} element={element} />
+              <GameBtn key={element.name} element={element} />
             )
           })}
         </div> :
