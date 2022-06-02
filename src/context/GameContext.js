@@ -17,14 +17,12 @@ export function GameProvider({ children }) {
   }, [choices]);
 
   useEffect(() => {
-    switch (userChoice + houseChoice) {
-      case "rockrock":
-      case "paperpaper":
-      case "scissorsscissors":
-      case "lizardlizard":
-      case "spockpock":
-        setResult("DRAW");
-        break;
+    if (!userChoice || !houseChoice) return;
+
+    if (userChoice === houseChoice) {
+      setResult("DRAW");
+    }
+    else switch (userChoice + houseChoice) {
       case "rockpaper":
       case "rockspock":
       case "paperscissors":
