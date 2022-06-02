@@ -5,6 +5,7 @@ import { useClickOutside } from "../../hooks/useClickOutside";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { gameData } from "../../data/gameData";
+import { useCallback } from "react";
 
 export const RulesModal = () => {
 
@@ -12,15 +13,15 @@ export const RulesModal = () => {
 
   const [rulesOpened, setRulesOpened] = useState(false);
 
-  const openRulesModal = () => {
-    setRulesOpened(!rulesOpened);
-  }
+  const openRulesModal = useCallback(() => {
+    setRulesOpened(true);
+  }, []);
 
-  const closeRulesModal = () => {
+  const closeRulesModal = useCallback(() => {
     setRulesOpened(false);
-  }
+  }, []);
 
-  let domNode = useClickOutside(() => {
+  const domNode = useClickOutside(() => {
     setRulesOpened(false);
   })
 
