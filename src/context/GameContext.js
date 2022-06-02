@@ -11,7 +11,7 @@ export function GameProvider({ children }) {
   const [result, setResult] = useState("");
   const [score, setScore] = useState(0);
 
-  const choices = useMemo(() => gameData[game].elements.map(({ name }) => name), [game]);
+  const choices = useMemo(() => game && gameData[game].elements.map(({ name }) => name), [game]);
   const getHouseChoice = useCallback(() => {
     setHouseChoice(choices[Math.floor(Math.random() * (choices.length))])
   }, [choices]);
