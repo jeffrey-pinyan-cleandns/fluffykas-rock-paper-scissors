@@ -4,6 +4,11 @@ import logo from "../assets/images/logo.svg";
 import logoBonus from "../assets/images/logo-bonus.svg";
 import rules from "../assets/images/image-rules.svg";
 import rulesBonus from "../assets/images/image-rules-bonus.svg";
+import rock from "../assets/images/icon-rock.svg";
+import paper from "../assets/images/icon-paper.svg";
+import scissors from "../assets/images/icon-scissors.svg";
+import lizard from "../assets/images/icon-lizard.svg";
+import spock from "../assets/images/icon-spock.svg";
 
 export const gameData = {
     "rps": {
@@ -79,3 +84,5 @@ export const gameData = {
 };
 
 export const games = Object.entries(gameData).map(([ game, data ]) => ({ game, ...data }));
+
+export const elementImages = { "rock": rock, "paper": paper, "scissors": scissors, "lizard": lizard, "spock": spock };
