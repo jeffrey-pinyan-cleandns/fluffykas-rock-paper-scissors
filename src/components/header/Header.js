@@ -1,7 +1,6 @@
 import "./Header.scss";
-import logo from "../../assets/images/logo.svg";
-import logoBonus from "../../assets/images/logo-bonus.svg";
 import { useGame } from "../../context";
+import { gameData } from "../../data/gameData";
 
 export const Header = () => {
 
@@ -9,7 +8,7 @@ export const Header = () => {
 
   return (
     <header>
-      <img className="logo" src={game === "Rock, Paper, Scissors, Lizard, Spock" ? logoBonus : logo} alt={game} />
+      <img className="logo" src={gameData[game].logo} alt={game} />
       <div className="score-display">
         <h1 className="score-title">SCORE</h1>
         <span className="score">{score}</span>
