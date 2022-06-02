@@ -1,17 +1,14 @@
 import "./GameContainer.scss";
-import bgPentagon from "../../assets/images/bg-pentagon.svg";
-import bgTriangle from "../../assets/images/bg-triangle.svg";
 import { Header, GameBtn, RulesModal, ResultContainer } from "../../components";
 import { useGame } from "../../context";
 import { pageTransition } from "../../assets/animations";
 import { motion } from "framer-motion";
-import dataForGame from "../../data/gameData.json";
-import dataForBonusGame from "../../data/gameDataBonus.json";
+import { gameData } from "../../data/gameData";
 
 export const GameContainer = () => {
 
   const { game, userChoice } = useGame();
-  const gameElements = (game === "Rock, Paper, Scissors, Lizard, Spock" ? dataForBonusGame : dataForGame)
+  const gameElements = gameData[game].elements;
 
   return (
     <motion.div
@@ -23,7 +20,7 @@ export const GameContainer = () => {
       <Header />
       {!userChoice ?
         <div className="game-btn-container">
-          <img className="game-bg" src={(game === "Rock, Paper, Scissors, Lizard, Spock" ? bgPentagon : bgTriangle)} alt="" aria-hidden="true" />
+          <img className="game-bg" src={gameData[game].image} alt="" aria-hidden="true" />
           {gameElements.map((element) => {
             return (
               <GameBtn key={element.name} element={element} />
