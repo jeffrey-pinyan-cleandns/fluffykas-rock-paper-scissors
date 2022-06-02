@@ -1,10 +1,19 @@
 import bgPentagon from "../assets/images/bg-pentagon.svg";
 import bgTriangle from "../assets/images/bg-triangle.svg";
+import logo from "../assets/images/logo.svg";
+import logoBonus from "../assets/images/logo-bonus.svg";
+import rules from "../assets/images/image-rules.svg";
+import rulesBonus from "../assets/images/image-rules-bonus.svg";
 
 export const gameData = {
     "rps": {
         "name": "Rock, Paper, Scissors",
         "image": bgTriangle,
+        "logo": logo,
+        "rules": {
+            "image": rules,
+            "text": "Rules of the game: Rock beats Scissors. Scissors beats Paper. Paper beats Rock.",
+        },
         "elements": [
             {
                 "name": "rock",
@@ -29,6 +38,11 @@ export const gameData = {
     "rpsls": {
         "name": "Rock, Paper, Scissors, Lizard, Spock",
         "image": bgPentagon,
+        "logo": logoBonus,
+        "rules": {
+            "image": rulesBonus,
+            "text": "Rules of the game: Rock beats Lizard and Scissors. Lizard beats Paper and Spock. Spock beats. Scissors and Rock. Scissors beats Paper and Lizard. Paper beats Rock and Spock.",
+        },
         "elements": [
             {
                 "name": "rock",
