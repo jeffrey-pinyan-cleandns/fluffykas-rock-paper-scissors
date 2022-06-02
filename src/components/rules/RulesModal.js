@@ -1,11 +1,10 @@
 import "./RulesModal.scss";
-import rules from "../../assets/images/image-rules.svg";
-import rulesBonus from "../../assets/images/image-rules-bonus.svg";
 import closeBtn from "../../assets/images/icon-close.svg";
 import { useGame } from "../../context";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { gameData } from "../../data/gameData";
 
 export const RulesModal = () => {
 
@@ -45,15 +44,8 @@ export const RulesModal = () => {
               onClick={closeRulesModal} />
           </div>
           <img
-            src={
-              game === "Rock, Paper, Scissors, Lizard, Spock" ?
-                rulesBonus : rules
-            }
-            alt={
-              game === "Rock, Paper, Scissors, Lizard, Spock" ?
-                "Rules of the game: Rock beats Lizard and Scissors. Lizard beats Paper and Spock. Spock beats. Scissors and Rock. Scissors beats Paper and Lizard. Paper beats Rock and Spock." :
-                "Rules of the game: Rock beats Scissors. Scissors beats Paper. Paper beats Rock."
-            }
+            src={gameData[game].rules.image}
+            alt={gameData[game].rules.text}
             className="rules-img"
           />
         </motion.div>
