@@ -48,12 +48,11 @@ export function GameProvider({ children }) {
       case "spockscissors":
       case "spockrock":
         setResult("USER WINS");
-        setScore(score + 1);
+        setScore((score) => score + 1);
         break;
       default:
         console.log("default stuff or error, duh")
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userChoice, houseChoice]);
 
   const context = useMemo(() => ({
