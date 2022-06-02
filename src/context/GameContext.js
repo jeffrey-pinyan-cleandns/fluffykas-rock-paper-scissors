@@ -1,4 +1,5 @@
-import { useState, useEffect, useContext, createContext } from "react";
+import { useCallback, useMemo, useState, useEffect, useContext, createContext } from "react";
+import { gameData } from "../data/gameData";
 
 const GameContext = createContext();
 
@@ -10,11 +11,10 @@ export function GameProvider({ children }) {
   const [result, setResult] = useState("");
   const [score, setScore] = useState(0);
 
-  const choices = (game === "Rock, Paper, Scissors, Lizard, Spock" ? ["rock", "paper", "scissors", "lizard", "spock"] : ["rock", "paper", "scissors"]);
-
-  const getHouseChoice = () => {
+  const choices = useMemo(() => gameData[game].elements.map(({ name }) => name), [game]);
+  const getHouseChoice = useCallback(() => {
     setHouseChoice(choices[Math.floor(Math.random() * (choices.length))])
-  }
+  }, [choices]);
 
   useEffect(() => {
     switch (userChoice + houseChoice) {
@@ -56,8 +56,12 @@ export function GameProvider({ children }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userChoice, houseChoice]);
 
+  const context = useMemo(() => ({
+    game, setGame, score, setScore, userChoice, setUserChoice, getHouseChoice, houseChoice, result
+  }), [game, setGame, score, setScore, userChoice, setUserChoice, getHouseChoice, houseChoice, result]);
+
   return (
-    <GameContext.Provider value={{ game, setGame, score, setScore, userChoice, setUserChoice, getHouseChoice, houseChoice, result }}>
+    <GameContext.Provider value={context}>
       {children}
     </GameContext.Provider>
   );
